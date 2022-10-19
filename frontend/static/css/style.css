@@ -1,17 +1,30 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  --nav-width: 200px;
-  margin: 0 0 0 var(--nav-width);
   font-family: "Quicksand", sans-serif;
   font-size: 18px;
 }
 
+/* .container {
+
+} */
+
 .nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: var(--nav-width);
-  height: 100vh;
+  width: 100vw;
+  height: 12vh;
   background: #222222;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 100%;
 }
 
 .nav__link {
@@ -27,7 +40,9 @@ body {
 }
 
 #app {
-  margin: 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.2rem 0 1.2rem;
   line-height: 1.5;
   font-weight: 500;
 }
@@ -41,12 +56,45 @@ a {
 }
 
 .service-submenu:hover .submenu-option1 {
-  display: block;
+  /* display: block; */
+  animation: fadeInSlideDown 250ms ease;
+  animation-fill-mode: forwards;
 }
 
 .submenu-option1 {
   position: absolute;
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: grey;
+  opacity: 0;
+  visibility: hidden;
 }
 
+.submenu-option1 a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  transition: all 250ms ease;
+}
+
+.submenu-option1 a:hover {
+  background-color: rgb(71, 71, 71);
+}
+/* .submenu-option1 a:first-child {
+  margin-bottom: 20px;
+} */
+
 /* do some dropdown menu animations */
+@keyframes fadeInSlideDown {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+  }
+}

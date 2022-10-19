@@ -9,18 +9,32 @@
   </head>
   <body>
     <nav class="nav">
-      <a href="/" class="nav__link" data-link>Home</a>
-      <a href="/about" class="nav__link" data-link>About</a>
-      <div class="service-submenu">
-        <a href="/services" class="nav__link" data-link>Services</a>
-        <div class="submenu-option1">
-          <a href="/services/transportation">Transportation</a><br />
-          <a href="/services/sportingGoods">Sporting Goods</a>
+      <div class="nav-inner">
+        <a href="/" class="nav__link" data-link>Home</a>
+        <a href="/about" class="nav__link" data-link>About</a>
+        <div class="service-submenu">
+          <a href="/services" class="nav__link" data-link>Services ▾</a>
+          <div class="submenu-option1">
+            <!-- this refreshed the page, rewatch the tutorial -->
+            <a href="/services/transportation" data-link>Transportation</a
+            ><br />
+            <a href="/services/sporting-goods" data-link>Sporting Goods</a>
+          </div>
+        </div>
+        <a href="/request-a-quote" class="nav__link" data-link
+          >Request a Quote</a
+        >
+        <!--  -->
+        <div class="service-submenu">
+          <a href="#" class="nav__link">Contact ▾</a>
+          <div class="submenu-option1">
+            <!-- this refreshed the page, rewatch the tutorial -->
+            <a href="/contact-on" class="nav__link" data-link>Ontario Office</a
+            ><br />
+            <a href="/contact-qc" class="nav__link" data-link>Quebec Office</a>
+          </div>
         </div>
       </div>
-      <!-- <a href="/services/transportation" class="nav__link" data-link
-        >Transportation</a
-      > -->
     </nav>
     <div id="app"></div>
     <script type="module" src="/static/js/router.js"></script>

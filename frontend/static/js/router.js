@@ -3,6 +3,9 @@ import About from "./views/About.js";
 import Services from "./views/Services.js";
 import Transportation from "./views/Transportation.js";
 import SportingGoods from "./views/SportingGoods.js";
+import Quote from "./views/Quote.js";
+import ContactON from "./views/Contact-ON.js";
+import ContactQC from "./views/Contact-QC.js";
 
 const pathToRegex = (path) =>
   new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
@@ -12,9 +15,6 @@ const getParams = (match) => {
   const keys = Array.from(match.route.path.matchAll(/:(\w+)/g)).map(
     (result) => result[1]
   );
-  // console.log(Array.from(match.route.path.matchAll(/:(\w+)/g)));
-
-  // return {};
   return Object.fromEntries(
     keys.map((key, i) => {
       return [key, values[i]];
@@ -28,15 +28,15 @@ const navigateTo = (url) => {
 };
 
 const router = async () => {
-  // console.log(pathToRegex("/services/:id"));
-  // services/:id
   const routes = [
     { path: "/", view: Home },
     { path: "/about", view: About },
     { path: "/services", view: Services },
     { path: "/services/transportation", view: Transportation },
-    { path: "/services/sportingGoods", view: SportingGoods },
-    { path: "/services/:id", view: Services },
+    { path: "/services/sporting-goods", view: SportingGoods },
+    { path: "/request-a-quote", view: Quote },
+    { path: "/contact-on", view: ContactON },
+    { path: "/contact-qc", view: ContactQC },
   ];
 
   //   Test each route
