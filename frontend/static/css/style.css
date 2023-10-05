@@ -10,10 +10,6 @@ body {
   font-size: 18px;
 }
 
-/* .container {
-
-} */
-
 .nav {
   width: 100vw;
   height: 12vh;
@@ -81,9 +77,21 @@ a {
 .submenu-option1 a:hover {
   background-color: rgb(71, 71, 71);
 }
-/* .submenu-option1 a:first-child {
-  margin-bottom: 20px;
-} */
+
+.transportation-grid {
+  padding-top: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.grid-cell img {
+  max-width: 250px;
+}
+
+.map-container {
+  max-height: 30vh;
+}
 
 /* do some dropdown menu animations */
 @keyframes fadeInSlideDown {

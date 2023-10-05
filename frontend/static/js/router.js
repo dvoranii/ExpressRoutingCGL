@@ -1,11 +1,11 @@
-import Home from "./views/Homepage.js";
-import About from "./views/About.js";
-import Services from "./views/Services.js";
-import Transportation from "./views/Transportation.js";
-import SportingGoods from "./views/SportingGoods.js";
-import Quote from "./views/Quote.js";
-import ContactON from "./views/Contact-ON.js";
-import ContactQC from "./views/Contact-QC.js";
+import Home from "./views/Home/Homepage.js";
+import About from "./views/About/about.js";
+import Services from "./views/Services/Services.js";
+import Transportation from "./views/Services/Transportation/Transportation.js";
+import SportingGoods from "./views/Services/SportingGoods/SportingGoods.js";
+import Quote from "./views/Quote/Quote.js";
+import ContactON from "./views/Contact/Contact-ON/Contact-ON.js";
+import ContactQC from "./views/Contact/Contact-QC/Contact-QC.js";
 
 const pathToRegex = (path) =>
   new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
@@ -25,6 +25,7 @@ const getParams = (match) => {
 const navigateTo = (url) => {
   history.pushState(null, null, url);
   router();
+  window.loadStylesheetForCurrentRoute();
 };
 
 const router = async () => {
