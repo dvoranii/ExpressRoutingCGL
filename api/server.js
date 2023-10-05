@@ -14,4 +14,4 @@ app.get("/*", (req, res) => {
 
 app.listen(process.env.PORT || 3001, () => console.log("Server running...."));
 
-module.exports = app;
+export default app;
