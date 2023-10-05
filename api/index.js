@@ -1,9 +1,11 @@
-const express = require("express");
-const path = require("path");
+import express from "express";
+import path from "path";
 
 const app = express();
 
-// With CommonJS, you can directly use __dirname
+import { fileURLToPath } from "url";
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 app.use(
   "/static",
   express.static(path.resolve(__dirname, "..", "frontend", "static"))
@@ -18,4 +20,4 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-module.exports = app;
+export default app;
